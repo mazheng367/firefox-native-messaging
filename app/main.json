@@ -1,0 +1,9 @@
+{
+    "name": "downloader.manga",
+    "description": "download manga",
+    "path": "H:\\firefox-ext-app\\app\\main.bat",
+    "type": "stdio",
+    "allowed_extensions": [
+        "mazheng367@qq.com"
+    ]
+}
