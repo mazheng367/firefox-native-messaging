@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Borderify",
+    "version": "1.0",
+    "description": "Adds a red border to all webpages matching mozilla.org.",
+    "applications": {
+        "gecko": {
+            "id": "mazheng367@qq.com"
+        }
+    },
+    "browser_action": {
+        "default_icon": {
+            "32": "icons/icon.ico"
+        },
+        "default_title": "open mg"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.36mh.com/*"
+            ],
+            "js": [
+                "dist/main.js"
+            ]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "dist/backgroundmanga.js"
+        ]
+    },
+    "permissions": [
+        "nativeMessaging"
+    ]
+}
