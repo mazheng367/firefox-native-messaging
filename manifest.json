@@ -17,7 +17,8 @@
     "content_scripts": [
         {
             "matches": [
-                "https://www.36mh.com/*"
+                "https://www.36mh.com/*",
+                "http://www.36mh.com/*"
             ],
             "js": [
                 "dist/main.js"
