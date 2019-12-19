@@ -1,16 +1,33 @@
 /*jshint esversion:9*/
-const div = document.createElement("div");
-div.style.cssText += "position:fixed;right:0;top:10px;border-radius:50%;width:50px;height:50px;background-color:red";
-div.addEventListener("click", async () => {
-    debugger;
-    (document.querySelector("#keywords") as HTMLInputElement).value = "学习";
-    (document.querySelector("#btnSearch") as HTMLButtonElement).click();
 
-    const data = await new Promise((resolve) => setTimeout(() => resolve(0), 1000)) ?? {};
+import { createDom, createStyle } from './utils/domHelper';
 
-    console.log(data);
+createStyle(require("./template/mainstyle.css"));
+
+const maskTpl = require("./template/mask.html");
+const buttonTpl = require("./template/button.html");
+
+const elems = createDom([maskTpl, buttonTpl].join(""));
+
+elems[1].addEventListener("click", () => {
+    const mask = document.querySelector(".inject-manga-mask");
+    mask.classList.toggle("inject-elem-hidden");
 });
-document.body.appendChild(div);
+
+elems.forEach(node => document.body.appendChild(node));
+
+// document.body.appendChild(btn);
+
+// div.addEventListener("click", async () => {
+//     debugger;
+//     (document.querySelector("#keywords") as HTMLInputElement).value = "学习";
+//     (document.querySelector("#btnSearch") as HTMLButtonElement).click();
+
+//     const data = await new Promise((resolve) => setTimeout(() => resolve(0), 1000)) ?? {};
+
+//     console.log(data);
+// });
+// document.body.appendChild(div);
 
 
 class LazyMan {
